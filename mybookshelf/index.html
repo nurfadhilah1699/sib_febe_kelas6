@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/font/quicksand.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Rak Bukuku</title>
+</head>
+<body>
+    <div class="wrapper" id="filter">
+
+        <div class="container shadow">
+            <div class="book-picture">
+                <img src="assets/img/bookshelf.png" alt="Rak Bukuku">
+            </div>
+            <h2 class="text-header">Rak Bukuku</h2>
+
+            <form action="#" class="search" id="search">
+                <input type="text" id="searchBook" onkeyup="searchBookTitle()" placeholder="Cari judul buku">
+                <button id="searchSubmit" disabled></button>
+            </form>
+
+            <form action="#" class="input" id="input">
+                <div class="inputBook">
+                    <label for="inputBookTitle">Judul Buku</label>
+                    <input type="text" name="inputBookTitle" id="inputBookTitle" placeholder="Masukkan judul buku" required>
+                </div>
+                <div class="inputBook">
+                    <label for="inputBookAuthor">Penulis Buku</label>
+                    <input type="text" name="inputBookAuthor" id="inputBookAuthor" placeholder="Masukkan penulis buku" required>
+                </div>
+                <div class="inputBook">
+                    <label for="inputBookYear">Tahun Terbit</label>
+                    <input type="number" name="inputBookYear" id="inputBookYear" placeholder="Masukkan tahun terbit buku" required>
+                </div>
+                <button id="btn-submit" type="submit">Simpan</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <h2 class="text-header">Rak Buku yang Belum Dibaca</h2>
+            <div class="list-book" id="unread">
+                
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="text-header">Rak Buku yang Sudah Dibaca</h2>
+            <div class="list-book" id="read">
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span class="close">&times;</span>
+                <h2>Yakin ingin menghapus buku?</h2>
+                <button class="btn btn-success" id="vdelete">Ya</button>
+                <button class="btn btn-danger" id="nodelete">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/dom.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

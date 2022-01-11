@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.wrapper .container {
+    width: 400px;
+    border-radius: 10px;
+    margin: 10px;
+    background: linear-gradient(#08d8e7, #7adada);
+    padding: 10px;
+    flex-grow: 1;
+    height: fit-content;
+}
+.book-picture {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.book-picture img {
+    width: 110px;
+}
+.text-header {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(34, 110, 160, 0.8);
+    color: #eef3f5;
+}
+.search {
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+#searchBook {
+    background: #f1faff;
+    border: 2px solid #316b83;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: auto;
+    flex-grow: 1;
+}
+#searchSubmit {
+    background: url('../img/search.svg');
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+}
+.input {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    height: 300px;
+    margin-bottom: 10px;
+}
+.inputBook {
+    display: flex;
+    flex-direction: column;
+}
+.inputBook label {
+    margin-bottom: 3px;
+    font-size: 17px;
+    font-weight: lighter;
+    color: #eef3f5;
+    text-shadow: 2px 2px 4px rgba(34, 110, 160, 0.8);
+}
+.shadow {
+    box-shadow: 4px 4px 4px rgba(39, 38, 38, 0.8);
+}
+input[type=text],
+input[type=number] {
+    font-family: 'Quicksand', sans-serif;
+    background: #f1faff;
+    border: 2px solid #316b83;
+    border-radius: 5px;
+    padding: 14px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+.container > .input > button {
+    background-color: #316b83;
+    color: white;
+    border: 2px solid #316b83;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 6px;
+    margin-top: auto;
+    font-size: 16px;
+    font-weight: bold;
+    align-self: flex-end;
+    width: fit-content;
+    cursor: pointer;
+}
+.container > .input > button:hover {
+    background-color: white;
+    color: #316b83;
+}
+input[type=text],
+input[type=number],
+button:focus {
+    outline: none;
+}
+.book-item {
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 12px 24px 12px 24px;
+    background: #f1faff;
+    display: flex;
+    align-items: center;
+}
+.book-item > .book-detail {
+    flex-grow: 1;
+}
+.book-item > .book-detail h3 {
+    margin-bottom: unset;
+}
+.book-item > .book-detail p {
+    margin-top: 5px;
+    margin-bottom: unset;
+}
+.book-item > .book-detail span {
+    margin-top: 10px;
+    font-style: italic;
+}
+.btn-read {
+    background: url('../img/read-outline.svg');
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+}
+.btn-read:hover {
+    background: url('../img/read.svg');
+    background-size: contain;
+}
+.btn-delete {
+    background: url('../img/delete-outline.svg');
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+}
+.btn-delete:hover {
+    background: url('../img/delete.svg');
+    background-size: contain;
+}
+.btn-undo {
+    background: url('../img/undo.svg');
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+}
+
+/* Modal custom delete */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+    position: relative;
+    background-color: #eef3f5;
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #eef3f5;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 10px 16px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #316b83;
+}
+
+.btn {
+    width: 10%;
+    border-radius: 5px;
+    padding: 4px;
+    box-sizing: border-box;
+    margin: 5px;
+    color: #fefefe;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.459);
+}
+
+.btn-success {
+    background-color: #316b83;
+}
+
+.btn-danger {
+    background-color: #dd0a35;
+}
+
+.btn-success:hover {
+    cursor: pointer;
+    color: #316b83;
+    background-color: #fefefe;
+    border: 1px solid #316b83;
+}
+
+.btn-danger:hover {
+    cursor: pointer;
+    color: #dd0a35;
+    background-color: #fefefe;
+    border: 1px solid #dd0a35;
+}
+
+@media  screen and (max-width: 900px) {
+    .btn {
+        width: fit-content;
+    }
+}
